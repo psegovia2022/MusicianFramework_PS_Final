@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Group 6 OnYr6</title>
+
+
+   <!-- GOOGLE FONTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;500;700;800&family=Roboto:wght@300;500;700;900&family=Ysabeau:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+
+   <!-- FONT AWESOME -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+   <!-- CSS custom styles -->
+   <link rel="stylesheet" href="../css/prism.css">
+   <link rel="stylesheet" href="../css/main.css">
+
+   <!-- Javascript link -->
+   <script src="../scripts/prism.js" defer></script>
+   <script src="../scripts/scripts.js" async></script>
+
+</head>
+
+<body>
+
+   <header>
+      <nav class="topNav">
+         <a href="../index.html" id="logoLink">
+            <img src="../images/OnYr6_a.svg" alt="music symbol" id="logo">
+         </a>
+         <ul class="menu">
+            <li>
+               <a href="../index.html" class="menuItem">Home</a>
+
+            </li>
+            <li>
+               <a href="../pages/elements.html" class="menuItem">Elements</a>
+
+            </li>
+            <li>
+               <a href="../pages/components.html" class="active menuItem">Components</a>
+            </li>
+            <li>
+               <a href="../pages/demos.html" class="menuItem">Demos</a>
+            </li>
+         </ul>
+         <button class="icon">
+            <i class="fa-solid fa-bars menuIcon"></i>
+            <i class="fa-regular fa-rectangle-xmark closeIcon"></i>
+         </button>
+      </nav>
+   </header>
+   <!-- The form is wrapped inside the <form> tags with the id="myForm". This ID is used to access the form in JavaScript. -->
+   <form id="myForm">
+      <!-- The form is divided into two fieldsets using the <fieldset> element. Each fieldset contains a <legend> to provide a title for the fieldset. -->
+      <fieldset>
+         <legend>OnYr6 Contact Us</legend>
+         <!-- The first fieldset contains contact information fields: Name, Email, Message, and Country. The fields are created using <label> and <input> or <textarea> elements. The required attribute is added to make these fields mandatory. -->
+         <div class="form-group contact">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+         </div>
+
+         <div class="form-group contact">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+         </div>
+
+         <div class="form-group contact">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+         </div>
+
+         <div class="form-group contact">
+            <label for="country">Select your country:</label>
+            <select id="country" name="country" required>
+
+               <option value="" disabled selected>Select your country</option>
+               <option value="usa">United States</option>
+               <option value="india">India</option>
+               <option value="canada">Canada</option>
+               <option value="uk">United Kingdom</option>
+               <option value="australia">Australia</option>
+               <!-- Add more options as needed -->
+            </select>
+         </div>
+      </fieldset>
+      <!--The second fieldset contains preferences fields: Favorite Music (radio buttons) and Subscribe to Newsletter (checkbox).-->
+      <fieldset>
+         <legend>Preferences</legend>
+
+         <div class="form-group">
+            <label>Favorite Music:</label>
+            <!-- Here we define the radio button which gives  user only one option at a time by selecting the radio class  -->
+            <div class="radio">
+               <input type="radio" id="Spotify" name="Music" value="spotify">
+               <label for="Spotify" class="music">Spotify</label>
+            </div>
+            <div class="radio">
+               <input type="radio" id="AppleMusic" name="Music" value="apple">
+               <label for="AppleMusic" class="music">Apple Music</label>
+            </div>
+            <div class="radio">
+               <input type="radio" id="AmazonMusic" name="Music" value="amazon">
+               <label for="AmazonMusic" class="music">Amazon Music</label>
+            </div>
+         </div>
+         <div class="form-group">
+            <label for="newsletter">Subscribe to Newsletter:(Optional)</label>
+            <input type="checkbox" id="newsletter" name="newsletter">
+         </div>
+      </fieldset>
+      <div class="button-container">
+         <button type="submit" id="submit">Submit</button>
+      </div>
+      <!-- you will get an alert message saying "Form submitted successfully!". -->
+   </form>
+
+
+   <script>
+      // Function to handle form submission
+      function handleFormSubmit(event) {
+         event.preventDefault(); // Prevent default form submission behavior
+
+         // Get form values
+         var name = document.getElementById("name").value;
+         var email = document.getElementById("email").value;
+         var message = document.getElementById("message").value;
+         var country = document.getElementById("country").value;
+         var music = document.querySelector('input[name="Music"]:checked');
+         var newsletter = document.getElementById("newsletter").checked;
+
+         // Perform form validation
+         if (
+            name.trim() === "" ||
+            email.trim() === "" ||
+            message.trim() === "" ||
+            country === "" ||
+            music === null
+         ) {
+            if (music === null) {
+               alert("Please select an option for Favorite Music.");
+            } else {
+               alert("Please fill in all fields.");
+            }
+            return;
+         }
+         // Extract the value from the selected radio button
+         music = music.value;
+
+         // Perform any necessary actions with the form data
+         // Replace the following code with your own logic
+
+         // Show success message to the user
+         alert("Form submitted successfully!");
+
+         // Reset the form
+         document.getElementById("myForm").reset();
+      }
+      // Add event listener to the form
+      document.getElementById("myForm").addEventListener("submit", handleFormSubmit);
+
+   </script>
+   <footer>
+      <p> Team members: </p>
+      <ul class="disc1">
+         <li> Gary Reid </li>
+         <li> Maria Reyes Barajas</li>
+         <li> Paulina Segovia Candia </li>
+         <li> Ruby Verma Sr.</li>
+      </ul>
+      <p id="copy">&copy;Copyright 2023 </p>
+   </footer>
+</body>
+
+</html>

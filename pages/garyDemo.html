@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Framework Components Group 6 Musicians</title>
+
+
+   <!-- GOOGLE FONTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;500;700;800&family=Roboto:wght@300;500;700;900&family=Ysabeau:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+
+   <!-- FONT AWESOME -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+   <!-- CSS custom styles -->
+   <link rel="stylesheet" href="../css/prism.css">
+   <link rel="stylesheet" href="../css/main.css">
+   
+<!-- Javascript link -->
+   <script src="../scripts/scripts.js" async></script>
+   <script src="../scripts/prism.js" defer></script>
+   
+</head>
+
+<body>
+
+   <header>
+      <nav class="topNav">
+         <a href="../index.html" id="logoLink">
+            <img src="../images/OnYr6_a.svg" alt="music symbol" id="logo">
+         </a>
+         <ul class="menu">
+            <li>
+               <a href="../index.html" class="menuItem">Home</a>
+
+            </li>
+            <li>
+               <a href="../pages/elements.html" class="menuItem">Elements</a>
+
+            </li>
+            <li>
+               <a href="../pages/components.html" class="active menuItem">Components</a>
+            </li>
+            <li>
+               <a href="../pages/demos.html" class="menuItem">Demos</a>
+            </li>
+         </ul>
+         <button class="icon" id="needsID1">
+            <i class="fa-solid fa-bars menuIcon"></i>
+            <i class="fa-regular fa-rectangle-xmark closeIcon"></i>
+         </button>
+      </nav>
+   </header>
+   <body>
+<!-- lightbox -->
+         <article>
+            <h2>Lightbox</h2>
+            <p>Here is a lightbox galley. It is important to mention that in order to look exactly how it is display next, the picture size is 400px x 400px. If you have different sizes, you will need to manually change the padding and margin for the popup image button.</p>
+
+            <div class="gallery">
+               <img src="../images/image05n.png" alt="" class="popup">
+               <img src="../images/image06n.png" alt="" class="popup">
+               <img src="../images/music04n.png" alt="" class="popup">
+               <img src="../images/image011n.png" alt="" class="popup">
+               <img src="../images/image10n.png" alt="" class="popup">
+               <img src="../images/image07n.png" alt="" class="popup">
+            </div>
+
+            <p>Example code: For the lightbox you should add just one class to each picture you include, as the code sample shows.</p>
+
+<pre><code class="language-html">
+&lt;div class="gallery">
+&lt;img src="../images/image05n.png" class="popup">
+&lt;img src="../images/image06n.png" class="popup">
+&lt;img src="../images/music04n.png" class="popup">
+&lt;img src="../images/image011n.png" class="popup">
+&lt;img src="../images/image10n.png" class="popup">
+&lt;img src="../images/image07n.png" class="popup">
+&lt;/div></code></pre>
+      </article>
+
+<!-- video player -->
+<article>
+               <h2>Video player</h2>
+               <p>We provide a simple video player to showcase your favorite video. We have the option to display your own video that you have to upload in the images folder, and also one link for a Youtube video. And it would look like the following.</p>
+               <div>
+                  <select id="video-selection">
+                     <option value="" id="yo" disabled selected>Select Video Type</option>
+                     <option value="own">Own Video</option>
+                     <option value="youtube">YouTube Video</option>
+                  </select>
+               </div>
+
+               <!-- video for own recording -->
+               <div class="video-player" id="own-video-player">
+                  <video class="video active" controls>
+                     <source src="grvideo.mp4" type="video/mp4">
+                  </video>
+                  <div class="controls">
+                     <button class="play-pause">Play/Pause</button><br>
+                     <input class="volume" type="range" min="0" max="1" step="0.1" value="1">
+                  </div>
+               </div>
+
+               <!-- youtube video write youtube video id -->
+               <div class="video-player" id="youtube-video-player">
+                  <iframe class="video" src="https://www.youtube.com/embed/_Td7JjCTfyc" allowfullscreen>
+                  </iframe>
+                  <div class="controls">
+                     <button class="play-pause">Play/Pause</button>
+                     <input class="volume" type="range" min="0" max="1" step="0.1" value="1">
+                  </div>
+               </div>
+
+               <p>Example code: For the video player, you should add several classes and id, as the code sample shows. Also, you should only put your own video in same folder or you have to give right path as the code sample shows.</p>
+
+               <pre>
+<code class="language-html">
+&lt;select id="video-selection">
+&lt;option value="" disabled selected>Select Video Type&lt;/option>
+&lt;option value="own">Own Video&lt;/option>
+&lt;option value="youtube">YouTube Video&lt;/option>
+&lt;/select>
+&lt;/div>
+
+&lt;!-- video for own recording -->
+
+&lt;div class="video-player" id="own-video-player">
+&lt;video class="video active" controls>
+&lt;source src="Assignment1.4.mp4" type="video/mp4">
+&lt;/video>
+&lt;div class="controls">
+&lt;button class="play-pause">Play/Pause&lt;/button>
+&lt;input class="volume" type="range" min="0" max="1" step="0.1" value="1">
+&lt;/div>
+&lt;/div>
+
+&lt;!-- youtube video write youtube video id -->
+&lt;div class="video-player" id="youtube-video-player">
+&lt;iframe
+    class="video"
+    src="https://www.youtube.com/embed/_Td7JjCTfyc" 
+    allowfullscreen
+    >
+&lt;/iframe>
+&lt;div class="controls">
+&lt;button class="play-pause">Play/Pause&lt;/button>
+&lt;input class="volume" type="range" min="0" max="1" step="0.1"value="1">
+&lt;/div>
+</code></pre>
+            
+   </article>      
+
+<!-- music player -->
+<article>
+               <h2>Music Player</h2>
+               <p>Teasing a new album? Wanting to give fans a peek into what goes into music production with a fun pre-production track? Look no further than our music player! Save tracks to your assets folder, copy our code, style accordingly and with just a click of a (play) button, enjoy music playing on your website! </p>
+
+               <div class="buttons-container">
+                  <input type="text" class="todo-input" placeholder="Enter a new Song" id="needsID">
+                  <!-- <input type="text" class="todo-input" placeholder="Enter a new to-do item"> -->
+                  <div class="buttons">
+                     <button onclick="addTodo()">Add Song name</button>
+                     <button onclick="editTodo()">Edit Song name</button>
+                     <button onclick="deleteTodo()">Delete song name</button>
+                  </div>
+
+               </div>
+            <div class="todo-list">
+             
+            </div>
+            <div>
+               <button onclick="playSong()" class="playbtn" >Load / Play Song</button>
+               <button id="pauseButton" class="pause">Pause</button><audio id="audioPlayer" controls autoplay>
+                  <source src="https://www.garyreidmusic.com/assets/hitit.mp3" type="audio/mpeg">
+                  <!-- add more source tags for different audio formats if needed -->
+               </audio>
+            </div>
+
+            <div id="controls">
+               <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
+            </div>
+            <pre>
+               <code class="language-html">&lt;div class="buttons-container">
+               &lt;input type="text" class="todo-input" placeholder="Enter a new Song" id="needsID">
+                  
+               &lt;div class="buttons">
+                     &lt;button onclick="addTodo()">Add Song name&lt;/button>
+                     &lt;button onclick="editTodo()">Edit Song name&lt;/button>
+                     &lt;button onclick="deleteTodo()">Delete song name&lt;/button>
+                  &lt;/div>
+               
+               &lt;/div>
+               &lt;div class="todo-list">
+               
+               &lt;/div>
+               &lt;div>
+               &lt;button onclick="playSong()" class="playbtn">Load / Play Song&lt;/button>
+               &lt;button id="pauseButton" class="pause">Pause&lt;/button>&lt;audio id="audioPlayer" controls autoplay>
+                  &lt;source src="filename.mp3" type="audio/mpeg">
+                  <!-- add more source tags for different audio formats if needed -->
+               &lt;/audio>
+               &lt;/div>
+               &lt;div id="controls">
+               &lt;input id="volume" type="range" min="0" max="1" step="0.1" value="1">
+               &lt;/div>
+               </code></pre>
+         </article>
+
+
+   </body>
+   
+   
+   
+   <footer>
+      <p> Team members: </p>
+      <ul class="disc1">
+         <li> Gary Reid </li>
+         <li> Maria Reyes Barajas</li>
+         <li> Paulina Segovia Candia </li>
+         <li> Ruby Verma Sr.</li>
+      </ul>
+
+      <p id="copy">&copy;Copyright 2023 </p>
+   </footer>
+   
+</body>
+
+</html>
